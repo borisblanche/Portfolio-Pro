@@ -1,0 +1,487 @@
+/* styles.css */
+
+/* Appliquer le canvas sur tout le viewport */
+#threejs-canvas-bg {
+    position: fixed; /* Le canvas reste fixe */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Empêche les interactions avec le canvas */
+    z-index: -1; /* Envoie le canvas à l'arrière-plan */
+}
+#threejs-canvas-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Empêche les interactions avec le texte */
+    z-index: 1; /* Premier plan */
+}
+
+/* Styles généraux */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Empêche le scroll horizontal */
+    background-color: transparent; /* Pour s'assurer que le fond reste transparent */
+}
+
+.hero {
+    position: relative; /* Position relative pour bien positionner le contenu */
+    z-index: 1; /* S'assurer que le contenu est au-dessus du canvas */
+}
+
+.container {
+    color: #fff; /* Texte en blanc pour contraste avec le fond noir */
+}
+
+/* Barre de navigation transparente */
+.navbar.is-transparent {
+    background-color: transparent; /* Fond transparent */
+    box-shadow: none; /* Supprime les ombres */
+    border-bottom: none; /* Supprime la bordure */
+}
+
+/* Couleur des liens en blanc */
+.navbar-item {
+    color: #fff; /* Couleur blanche pour les liens */
+    background-color: transparent!important;
+}
+
+/* Effet au survol des liens */
+.navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Légère surbrillance au survol */
+    color: #39ff14!important; /* Changer la couleur du texte au survol, vert néon par exemple */
+}
+
+/* Style du burger menu */
+.navbar-burger {
+    color: #fff; /* Couleur blanche du burger */
+}
+
+/* Effet au survol du burger menu */
+.navbar-burger:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Légère surbrillance au survol */
+}
+
+/* Pour la version mobile, assurez-vous que le menu s'affiche correctement */
+.navbar-menu {
+    background-color: transparent!important; /* Fond semi-transparent noir pour le menu mobile */
+}
+
+.navbar-item.is-active {
+    
+    color: #39ff14!important; /* Couleur des liens actifs */
+}
+/* Section de présentation */
+.presentation-section {
+    display: flex;
+    justify-content: center; /* Centrer la carte horizontalement */
+    align-items: center; /* Centrer la carte verticalement */
+    height: 100vh; /* Occuper toute la hauteur de la fenêtre */
+    background-color: transparent; /* Fond transparent pour voir le canvas derrière */
+}
+
+/* Carte de présentation */
+.presentation-card {
+    text-align: center;
+    padding: 2rem 3rem;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombre autour de la carte */
+    color: #fff; /* Texte en blanc */
+    border: 1px solid white ;
+   
+}
+.presentation-card:hover{
+    border-color: #39ff14!important;
+   
+}
+
+/* Titre principal */
+.presentation-title {
+    font-size: 2.5rem;
+    color: #fff; /* Texte blanc */
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px #39ff14; /* Effet néon vert */
+}
+
+/* Sous-titre */
+.presentation-subtitle {
+    font-size: 1.5rem;
+    color: #ccc; /* Texte gris clair */
+    margin-bottom: 1rem;
+}
+
+/* Conteneur des liens */
+.presentation-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espacement entre les liens */
+    margin-top: 1rem;
+}
+
+/* Style des liens */
+.presentation-link {
+    font-size: 1.25rem;
+    color: #fff; /* Texte blanc */
+    text-decoration: none; /* Pas de soulignement */
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.presentation-link:hover {
+    color: #39ff14; /* Changement de couleur en vert néon au survol */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14; /* Effet de néon au survol */
+}
+
+.presentation-link:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #39ff14; /* Barre de surbrillance néon */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.presentation-link:hover::before {
+    transform: scaleX(1); /* Animation de la barre de surbrillance */
+}
+
+/* Icônes */
+.presentation-link i {
+    margin-right: 0.5rem; /* Espacement entre l'icône et le texte */
+}
+/* Section des services */
+.services-section {
+    padding: 4rem 1.5rem; /* Espacement interne de la section */
+    background-color: transparent; /* Fond gris foncé */
+    color: #fff; /* Texte en blanc */
+    text-align: center; /* Centrer le texte */
+}
+
+/* Titre de la section */
+.section-title {
+    font-size: 2.5rem;
+    color: #39ff14; /* Couleur verte néon */
+    margin-bottom: 2rem;
+}
+
+/* Grille des services */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permet d'aller à la ligne sur petits écrans */
+    gap: 2rem; /* Espacement entre les cartes */
+    justify-content: center; /* Centre les cartes */
+}
+
+/* Carte de service */
+.service-card {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+    border-radius: 10px; /* Bords arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombre de la carte */
+    padding: 1.5rem; /* Espacement interne */
+    max-width: 300px; /* Largeur maximale de la carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'effet */
+}
+
+/* Icône du service */
+.service-icon {
+    font-size: 3rem; /* Taille de l'icône */
+    color: #39ff14; /* Couleur verte néon */
+    margin-bottom: 1rem;
+}
+
+/* Titre du service */
+.service-title {
+    font-size: 1.5rem;
+    color: #fff; /* Couleur blanche */
+    margin-bottom: 0.5rem;
+}
+
+/* Description du service */
+.service-description {
+    font-size: 1rem;
+    color: #ccc; /* Couleur gris clair */
+    line-height: 1.5; /* Espacement des lignes */
+}
+
+/* Effet au survol de la carte */
+.service-card:hover {
+    transform: translateY(-5px); /* Déplace légèrement vers le haut */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Accentue l'ombre */
+}
+
+
+/* Section des compétences */
+.skills-section {
+    position: relative;
+    height: 100vh; /* Occupe toute la hauteur de l'écran */
+    width: 100%;
+    background-color: transparent;/* Fond noir pour le canvas */
+    overflow: hidden; /* Empêche le défilement en dehors de la section */
+}
+
+/* Canvas pour les bulles des compétences */
+#threejs-canvas-bubbles {
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Assure que le canvas est à l'arrière-plan */
+}
+
+/* Section globale "À propos de moi" */
+.about-section {
+    display: flex;
+    justify-content: center; /* Centre la section horizontalement */
+    align-items: center; /* Centre la section verticalement */
+   min-height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+    background-color: transparent; /* Pas de fond */
+    padding: 2rem 0; /* Espacement vertical */
+}
+
+/* Conteneur principal divisé en deux */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale de la section */
+}
+
+/* Conteneur pour la carte d'identité */
+.identity-wrapper {
+    display: flex;
+    justify-content: center; /* Centre la carte horizontalement dans sa div */
+    align-items: center; /* Centre la carte verticalement */
+    flex: 1; /* Prend 50% de l'espace disponible */
+}
+
+/* Carte d'identité */
+.identity-card {
+    background-color: #ffffff; /* Fond blanc pour la carte */
+    padding: 1.5rem;
+    border-radius: 10px; /* Bords arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    width: 100%; /* Prend toute la largeur disponible dans son conteneur */
+    max-width: 400px; /* Largeur maximale de la carte */
+    text-align: left; /* Aligne le texte à gauche */
+    font-family: 'Arial', sans-serif; /* Police simple et lisible */
+    border: 2px solid black;
+}
+.identity-card:hover{
+    border-color:  #39ff14;;
+}
+
+/* Conteneur pour le canvas des bulles */
+.identity-wrapper {
+    display: flex; /* Utilise Flexbox pour aligner le contenu */
+    flex-direction: column; /* Aligne la carte et le lien en colonne */
+    justify-content: center; /* Centre la carte et le lien verticalement */
+    align-items: center; /* Centre la carte et le lien horizontalement */
+    flex: 1; /* Prend 50% de l'espace disponible */
+}
+
+/* Canvas pour les bulles */
+#threejs-canvas-bubbles {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 500px; /* Hauteur fixe du canvas */
+    max-width: 600px; /* Largeur maximale du canvas */
+}
+
+/* En-tête de la carte avec la photo et les détails */
+.identity-header {
+    display: flex; /* Aligne horizontalement la photo et les détails */
+    align-items: center; /* Aligne verticalement la photo et le texte */
+    margin-bottom: 1rem; /* Espacement sous l'en-tête */
+}
+
+/* Photo d'identité */
+.identity-photo {
+    width: 100px; /* Largeur de la photo */
+    height: 100px; /* Hauteur de la photo */
+    border-radius: 10px; /* Coins arrondis de la photo */
+    border:1px solid black;
+    margin-right: 1rem; /* Espacement à droite de la photo */
+    object-fit: cover; /* Ajuste la photo à l'intérieur du conteneur */
+}
+
+/* Détails de l'identité */
+.identity-details {
+    flex: 1; /* Prend l'espace disponible à droite de la photo */
+}
+
+/* Nom et profession */
+.identity-name, .identity-profession {
+    font-size: 1.1rem; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    margin: 0.3rem 0; /* Espacement entre les éléments */
+}
+
+/* Description de l'identité */
+.identity-description {
+    font-size: 1rem; /* Taille du texte */
+    color: #666; /* Couleur gris clair pour le texte */
+    line-height: 1.6; /* Espacement des lignes */
+    margin-top: 1rem; /* Espacement au-dessus de la description */
+    text-align: left; /* Texte aligné à gauche */
+}
+/* Conteneur pour le logo et le lien CV */
+.identity-footer {
+    display: flex; /* Aligne le logo et le lien horizontalement */
+    justify-content: space-between; /* Espacement entre le logo et le lien */
+    align-items: center; /* Centre verticalement le contenu */
+    margin-top: 1rem; /* Espacement au-dessus du footer */
+    border-top: 1px solid #e0e0e0; /* Ligne de séparation */
+    padding-top: 1rem; /* Espacement au-dessus de la ligne */
+}
+
+/* Logo de la carte */
+.identity-logo {
+    width: 30px; /* Largeur du logo */
+    height: 30px; /* Hauteur du logo */
+    object-fit: contain; /* Garde les proportions du logo */
+}
+
+/* Lien pour le CV */
+/* Lien pour le CV */
+.identity-cv-link {
+    font-size: 1rem; /* Taille du texte */
+    color: #39ff14; /* Couleur verte néon */
+    text-decoration: none; /* Supprime le soulignement */
+    border: 1px solid #39ff14; /* Bordure verte */
+    padding: 0.3rem 0.6rem; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    display: inline-flex; /* Aligne le logo et le texte horizontalement */
+    align-items: center; /* Centre le logo et le texte verticalement */
+    gap: 0.5rem; /* Espacement entre le logo et le texte */
+    margin-top: 1rem; /* Espacement au-dessus du lien */
+    transition: all 0.3s ease; /* Transition pour l'effet au survol */
+}
+.cv-link-container {
+    display: flex;
+    justify-content: center; /* Centre le lien horizontalement */
+    margin-top: 1rem; /* Espacement au-dessus du lien */
+}
+
+/* Icône du CV */
+.cv-icon {
+    width: 20px; /* Largeur de l'icône */
+    height: 20px; /* Hauteur de l'icône */
+}
+
+/* Effet au survol du lien CV */
+.identity-cv-link:hover {
+    background-color: #39ff14; /* Fond vert au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+
+/* Effet au survol de l'icône CV */
+.identity-cv-link:hover .cv-icon {
+    filter: brightness(0) invert(1); /* Inverse la couleur de l'icône pour correspondre au fond */
+}
+
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Passe en colonne sur petits écrans */
+    }
+    
+    .identity-wrapper, .canvas-wrapper {
+        flex: none; /* Supprime le partage 50/50 */
+        width: 100%; /* Prend toute la largeur disponible */
+        margin-bottom: 1rem; /* Espacement entre les sections */
+    }
+
+    #threejs-canvas-bubbles {
+        height: 300px; /* Hauteur ajustée pour le canvas */
+    }
+}
+
+
+
+
+
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/* Section de la carte de présentation */
+.card-section {
+    display: flex;
+    justify-content: center; /* Centrer la carte horizontalement */
+    align-items: center; /* Centrer la carte verticalement */
+    height: 100vh; /* Occuper toute la hauteur de la fenêtre */
+    /* background-color: #000;  */
+}
+
+/* Style de la carte */
+.card {
+    background-color: white; 
+    color: #fff; /* Couleur du texte */
+    padding: 2rem;
+    border-radius: 10px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre de la carte */
+    text-align: center; /* Centrer le texte */
+    width: 600px; /* Largeur de la carte */
+    max-width: 90%; /* Limite la largeur sur petits écrans */
+}
+.card-header{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titre de la carte */
+.card-title {
+    font-size: 2rem; /* Taille du titre */
+    color: black; /* Couleur verte néon */
+    margin-bottom: 0.5rem;
+}
+
+/* Sous-titre de la carte */
+.card-subtitle {
+    font-size: 1.25rem; /* Taille du sous-titre */
+    color: black; /* Couleur gris clair */
+    margin-bottom: 1.5rem;
+}
+
+/* Logo de la carte */
+.card-logo {
+    width: 100px; /* Taille du logo */
+    margin-bottom: 1rem;
+    border-radius: 50%; /* Cercle autour du logo */
+    border: 2px solid #39ff14; /* Bordure verte */
+}
+
+/* Conteneur des liens */
+.card-links {
+    display: flex;
+    justify-content: center; /* Centre les icônes */
+    gap: 1rem; /* Espacement entre les icônes */
+}
+
+/* Style des liens */
+.card-link {
+    font-size: 1.5rem; /* Taille des icônes */
+    color: #fff; /* Couleur des icônes */
+    transition: color 0.3s; /* Animation de transition */
+}
+
+.card-link:hover {
+    color: #39ff14; /* Couleur verte néon au survol */
+}
+
+

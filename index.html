@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="threejs-canvas-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar is-transparent">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">Mon Portfolio</a>
+                <span class="navbar-burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#about">À propos</a>
+                    <a class="navbar-item" href="#projects">Projets</a>
+                    <a class="navbar-item" href="#skills">Compétences</a>
+                    <a class="navbar-item" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <canvas id="threejs-canvas-text"></canvas>  -->
+    <section id="presentation" class="presentation-section">
+        <div class="presentation-card">
+            <h1 class="presentation-title">Boris Blanche</h1>
+            <h2 class="presentation-subtitle">Développeur Web</h2>
+            <div class="presentation-links">
+                <a href="https://github.com/ton-profil" target="_blank" class="presentation-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ton-profil" target="_blank" class="presentation-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Mes Services</h2>
+            <div class="services-grid">
+                <!-- Carte pour la création de sites web -->
+                <div class="service-card">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3 class="service-title">Création de Sites Web</h3>
+                    <p class="service-description">Je conçois des sites web modernes et responsives, adaptés à vos
+                        besoins.</p>
+                </div>
+                <!-- Carte pour le référencement -->
+                <div class="service-card">
+                    <i class="fas fa-search service-icon"></i>
+                    <h3 class="service-title">Référencement SEO</h3>
+                    <p class="service-description">Optimisation SEO pour améliorer la visibilité de votre site sur les
+                        moteurs de recherche.</p>
+                </div>
+                <!-- Carte pour le développement front-end -->
+                <div class="service-card">
+                    <i class="fas fa-code service-icon"></i>
+                    <h3 class="service-title">Développement Front-End</h3>
+                    <p class="service-description">Création d'interfaces utilisateur interactives et performantes avec
+                        les dernières technologies.</p>
+                </div>
+                <!-- Ajoutez d'autres services ici -->
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <!-- Carte d'identité à gauche -->
+            <div class="identity-wrapper">
+                <div class="identity-card">
+                    <div class="identity-header">
+                        <img src="path/to/photo.jpg" alt="Photo d'identité" class="identity-photo">
+                        <div class="identity-details">
+                            <p class="identity-name"><strong>Name :</strong> [Ton Nom]</p>
+                            <p class="identity-profession"><strong>Profession :</strong> Développeur Front-End</p>
+                        </div>
+                    </div>
+                    <div class="identity-description">
+                        <p>Développeur front-end en reconversion, passionné par le web et les nouvelles technologies.
+                            Enthousiaste à l'idée de relever de nouveaux défis !</p>
+                    </div>
+                </div>
+                <div class="cv-link-container">
+                    <a href="path/to/cv.pdf" download="Mon_CV.pdf" class="identity-cv-link">
+                        <img src="path/to/download-icon.png" alt="Download" class="cv-icon">
+                        Mon CV
+                    </a>
+                </div>
+            </div>
+
+            <!-- Canvas des bulles à droite -->
+            <div class="canvas-wrapper">
+                <canvas id="threejs-canvas-bubbles"></canvas>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- <section id="skills" class="skills-section">
+    <div class="skills-grid">
+        <div class="skill-card large">
+            <h3>HTML</h3>
+        </div>
+        <div class="skill-card medium">
+            <h3>CSS</h3>
+        </div>
+        <div class="skill-card large">
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card small">
+            <h3>Bulma</h3>
+        </div>
+        <div class="skill-card medium">
+            <h3>React</h3>
+        </div>
+       
+    </div>
+</section> -->
+
+
+    <!-- <section id="presentation" class="card-section">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Developpeur Front-End</h1>
+                <h2 class="card-subtitle">Blanche Boris</h2>
+            </div>
+            <div class="card-body">
+                <img src="path/to/your-logo.png" alt="Logo" class="card-logo">
+                <div class="card-links">
+                    <a href="https://github.com/ton-profil" target="_blank" class="card-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ton-profil" target="_blank" class="card-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Section d'accueil (avec Three.js) -->
+    <section id="home" class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <!-- <canvas id="threejs-canvas"></canvas> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos de moi -->
+    <section id="about" class="section">
+        <div class="container">
+            <h1 class="title">À propos de moi</h1>
+            <p>Je suis un développeur passionné avec une expertise en front-end...</p>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h1 class="title">Mes projets</h1>
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <!-- <img src="projet1.jpg" alt="Projet 1"> -->
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">Projet 1</p>
+                            <p>Ce projet est un exemple de ...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Répète ce bloc pour d'autres projets -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h1 class="title">Mes compétences</h1>
+            <p>HTML, CSS, JavaScript, React, etc...</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h1 class="title">Contactez-moi</h1>
+            <form>
+                <div class="field">
+                    <label class="label">Nom</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Votre nom">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="Votre email">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Message</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Votre message"></textarea>
+                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 Mon Nom. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Inclusion de Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Inclusion de FontLoader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/FontLoader.js"></script>
+    <!-- Inclusion de ton script personnalisé -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/TextGeometry.js"></script>
+    <script src="threejs.js"></script>
+    <script src="bubbles.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
